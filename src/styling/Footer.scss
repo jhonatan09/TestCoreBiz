@@ -1,0 +1,79 @@
+.footer {
+      .Newsletter {
+          background: #EF7460;
+          height: 165px;
+          width: 100%;
+          .container {
+            display: flex;
+            align-items: center;
+            height: inherit;
+            flex-direction: column;
+            .text-newsletter {
+                margin-bottom: 2%;
+                padding: 2%;
+                h4
+                ,span{
+                  font-weight: 400;
+                  font-family: $font;
+                  color: #fff;
+                }
+                h4 {
+                    font-size: 27px;
+                }
+                span {
+                  font-size: 15px;
+                }
+            }
+            .newsletter-inputs {
+                form {
+                    display: flex;
+                    justify-content: space-around;
+                    input
+                    ,button{
+                        height: 50px;
+                        border-radius: 3px;
+                        border: none;
+                        font-family: $font;
+                        font-size: 15px;
+                    }
+                    input {
+                        width: 35%;
+                        padding-left: 2%;
+                        &::placeholder {
+                            font-weight: 400;
+                            color: #888888;
+                        }
+                    }
+                    button {
+                        width: 20%; 
+                        font-weight: 500;
+                        color: #EF7460;                      
+                    }
+                }
+            }
+          }
+      }
+      .copyright {
+          height: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      @media screen and (min-width: 768px) {
+          .Newsletter {
+              .container {
+                  flex-direction: row;
+                  .text-newsletter {
+                    margin-bottom: 0;
+                    padding: 0;
+                    h4 {
+                        font-size: 40px;
+                    }
+                    span {
+                        font-size: 16px;
+                    }
+                  }
+              }
+          }
+      }
+}
