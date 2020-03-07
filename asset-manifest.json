@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/TestCoreBiz/static/css/main.b617ba21.chunk.css",
+    "main.js": "/TestCoreBiz/static/js/main.e12e3e91.chunk.js",
+    "main.js.map": "/TestCoreBiz/static/js/main.e12e3e91.chunk.js.map",
+    "runtime-main.js": "/TestCoreBiz/static/js/runtime-main.8c0ba4d1.js",
+    "runtime-main.js.map": "/TestCoreBiz/static/js/runtime-main.8c0ba4d1.js.map",
+    "static/js/2.63227972.chunk.js": "/TestCoreBiz/static/js/2.63227972.chunk.js",
+    "static/js/2.63227972.chunk.js.map": "/TestCoreBiz/static/js/2.63227972.chunk.js.map",
+    "index.html": "/TestCoreBiz/index.html",
+    "precache-manifest.636e5e61848c5b283538881a759b71ac.js": "/TestCoreBiz/precache-manifest.636e5e61848c5b283538881a759b71ac.js",
+    "service-worker.js": "/TestCoreBiz/service-worker.js",
+    "static/css/main.b617ba21.chunk.css.map": "/TestCoreBiz/static/css/main.b617ba21.chunk.css.map",
+    "static/js/2.63227972.chunk.js.LICENSE.txt": "/TestCoreBiz/static/js/2.63227972.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8c0ba4d1.js",
+    "static/js/2.63227972.chunk.js",
+    "static/css/main.b617ba21.chunk.css",
+    "static/js/main.e12e3e91.chunk.js"
+  ]
+}
