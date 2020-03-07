@@ -1,9 +1,13 @@
-Este é um projeto feito com base em e-commerce
+# This is a React project with Hooks and ApiContext based on an e-commerce layout
 
-![Alt text](./fontTest.jpg?raw=true "Initial")
+# Image this project:
 
-Para esse Projeto foram usadas as extensões:
+![Alt text](./front.jpg?raw=true "Initial")
 
+
+
+
+# What was installed in this project: 
     Carrosel:
        React slick : npm install react-slick --save
 
@@ -14,11 +18,10 @@ Para esse Projeto foram usadas as extensões:
         npm install --save react-router
 
 
-Para melhor usabilidade usei Hooks e ApiContext
 
 
-O que precisa para rodar:
-    Instalar o node_modules: npm install
-    E para rodar: npm start
+# what's needed for run that project:
+    Install node_modules: npm install
+    For execute: npm start
 
 

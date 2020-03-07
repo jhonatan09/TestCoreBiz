@@ -1,54 +1,59 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import {DataContext} from '../store/Context'
 import {useLocation} from 'react-router-dom'
 function PageProduct() {
 
+    const {setLinkar, setNumClick, numClick, linkar} = useContext(DataContext)
+
     const location = useLocation()
 
-    const [btnDe, setBtnDe] = useState(false)
-
-    const [btnIn, setBtnIn] = useState(false)
+    const [receiveItems, setReceiveItems] = useState({
+        productName: '',
+        imageUrl: '',
+        price: ''
+    })
 
     const [numInput, setNumInput]= useState(1)
 
-    const [price, setPrice]= useState(location.state.item.price)
+    const [newprice, setNewPrice] = useState(location.state.item.price)
 
-    const increment = (event) => {
-        setNumInput(prevState => prevState + 1)
-        setBtnIn(event)
+    const [price, setPrice]= useState(location.state.item.price) 
+
+    const increment = () => {
+        let Valinput = numInput
+        var novo = Valinput + 1;
+        setNumInput(novo)
+        setNewPrice(newprice + price)
     }
 
-    const decrescent = (event) => {
-            setNumInput(prevState => prevState - 1)
-            setBtnDe(event)   
-    }
-
-  
-
-
-
-   useEffect(() => {
-        if(btnIn){
-         setPrice(price * numInput)
-        }if(btnIn == true){
-            setBtnIn(false)
-        }
-    })
-
+    
 
     useEffect(() => {
-        if(btnDe){
-         setPrice(price / numInput)
-        }if(btnDe == true){
-             setBtnDe(false)
+        setReceiveItems({
+            productName: location.state.item.productName,
+            imageUrl: location.state.item.imageUrl,
+            price: newprice
+        })
+    },[newprice])
+
+
+
+    const decrescent = () => {
+        let Valinput = numInput
+        if(Valinput > 0){
+            setNumInput(Valinput - 1)
+            setNewPrice(newprice - price) 
         }
-    })
+         
+    }
 
-    console.log(btnIn)
+    const handleClick = (event) => {
+        setLinkar([...linkar, {event}])
+        const value1 = numClick + 1;
+        setNumClick(value1)
+        console.log(event, 'pagina produto')
+    } 
 
-    
-    
-    
-    const prices = price.toLocaleString('pt-br', {minimumFractionDigits: 2})
 
     return (
         <div className="Product-page">
@@ -60,16 +65,16 @@ function PageProduct() {
                     <div className="prod">
                         <h1>{location.state.item.productName}</h1>
                         <div className="details-product">
-                            <span className="price"><span>R$</span>{prices}</span>
+                        <span className="price"><span className="pt-br">R$</span>{newprice.toLocaleString('pt-br', {minimumFractionDigits: 2})}</span>
                         </div>
                     </div>
                     <div className="details-inputs">
                             <div className="numbers">
-                                <button onClick={() => decrescent(true)}>-</button>
-                                <span>{numInput}</span>
-                                <button className="plus" onClick={() => increment(true)}>+</button>
+                                <button onClick={() => decrescent()}>-</button>
+                                <input placeholder=""  onChange={e => setNumInput(e.target.value)} value={numInput} type="number" />
+                                <button className="plus" onClick={() => increment()}>+</button>
                             </div>
-                        <button className="btn-buy">
+                        <button className="btn-buy" onClick={() => handleClick(receiveItems)}>
                             Comprar
                             <svg xmlns="http://www.w3.org/2000/svg" width="20.136" height="18.5" viewBox="0 0 20.136 18.5">
                                 <g id="shopping-cart" transform="translate(0.25 0.25)">

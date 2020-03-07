@@ -20,7 +20,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="copyright size-12">
-                    <span>Developed by Corebiz</span>
+                    <span>Developed by Jhonatan</span>
                 </div>
             </div>
         </>

@@ -4,8 +4,9 @@
         display: flex;
         flex-direction: column;
         .image-product {
-            width: 50%;
+            width: 100%;
             border: 1px solid #EEEEEE;
+            text-align: center;
             img {
                 height: 180px;
                 
@@ -14,10 +15,11 @@
         .info-product {
             width: 100%;
             margin-bottom: 6%;
+            text-align: center;
+            padding: 0 5%;
             .prod {
                 height: 40%;
                 display: flex;
-                padding: 0 4%;
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
@@ -35,6 +37,9 @@
                         color:#EF7460;
                         font-size: 37px;
                         font-weight: bold;
+                        .pt-br {
+                            margin-right: 4px;
+                        }
                         span {
                             font-size: 22px;
                         }
@@ -49,6 +54,7 @@
                     width: 100px;
                     border-radius: 3px;
                     border: 1px solid #DDDDDD;
+                    margin-right: 3%;
                     button {
                         width: 30px;
                         font-size: 2rem;
@@ -56,11 +62,16 @@
                         color: #EF7460;
                         background: transparent;
                     }
-                    span {
-                        width: 30px;
+                    input {
+                        width: 70%;
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        padding-left: 8px;
+                        background: transparent;
+                        border: none;
+                        text-shadow: none;
+                        color: #000;
+                        text-rendering: unset;
+                        text-align: center;
                     }
                     .plus {
                         font-size: 1.7rem;
@@ -91,7 +102,11 @@
     @media screen and (min-width: 768px) {
         .container{
             flex-direction: row;
+            height: 600px;
             .image-product {
+                width: 50%;
+                height: 400px;
+                margin-top: 2%;
                 img {
                     height: 400px;
                 }
@@ -108,8 +123,16 @@
                 }
                 .details-inputs{
                     justify-content: initial;
+                    .numbers {
+                        margin-right: 3%;
+                    }
                 }
             }
         }
     }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useContext} from 'react'
 import {DataContext} from './store/Context'
 import Slider from "react-slick";
 import { bool } from 'prop-types';
@@ -6,17 +6,19 @@ import PageProduct from './pageProduct/PageProduct'
 import {Link, Switch, Route} from 'react-router-dom'
 
 function Product() {
-    const {product, setLinkar, setNumClick, numClick} = useContext(DataContext)
+    const {product, setLinkar, setNumClick, numClick, linkar, loader, errpApi} = useContext(DataContext)
+
+    const handleClick = (event) => {
+        setLinkar([...linkar, {event}])
+        const f = numClick + 1;
+        setNumClick(f)
+        console.log(event)
+    }
    
       const products = product.map( item => {
           const price = item.price.toLocaleString('pt-br', {minimumFractionDigits: 2})
 
-        const handleClick = (event) => {
-            setLinkar([event])
-            const f = numClick + 1;
-            setNumClick(f)
-            console.log(event)
-        }
+         
 
         return (
             <>
@@ -75,18 +77,25 @@ function Product() {
     return (
         <>
         <div className="Content-showcase container">
-            <Switch>
-                <Route exact path="/">
-                    <div className="carossel">
-                        <Slider {...settings}>
-                        {products}
-                        </Slider>
-                    </div>
-                </Route>
-                <Route path="/Product">
-                    <PageProduct />
-                </Route>
-            </Switch>
+            {errpApi ? <div className="error"> Error api its not work </div>
+                :
+                loader ? <div className="loader"> loading...</div> 
+                : 
+                <Switch>
+                    <Route exact path="/">
+                        <h1 className="title-main">Produtos em destaque</h1>
+                        <div className="carossel">
+                            <Slider {...settings}>
+                            {products}
+                            </Slider>
+                        </div>
+                    </Route>
+                    <Route path="/Product">
+                        <PageProduct />
+                    </Route>
+                </Switch>
+            
+            }
         </div>
         </>
     )
