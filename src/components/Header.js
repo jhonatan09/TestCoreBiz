@@ -75,10 +75,10 @@ function Header() {
                 </div>
                 <nav  className={`nav-bar size-9  ${view > 767 ? "" : `${!btnMobile ? "hidden" : ""}`}`} style={{width: view > 767 ? "" : "100%"}}>
                     <ul className="list-categories">
-                        <li><Link className="category" to="/">Categoria 01</Link></li>
-                        <li><Link className="category" to="/">Categoria 02</Link></li>
-                        <li><Link className="category" to="/">Categoria 03</Link></li>
-                        <li><Link className="category" to="/">Categoria 04</Link></li>
+                        <li><Link className="category" to="/TestCoreBiz">Categoria 01</Link></li>
+                        <li><Link className="category" to="/TestCoreBiz">Categoria 02</Link></li>
+                        <li><Link className="category" to="/TestCoreBiz">Categoria 03</Link></li>
+                        <li><Link className="category" to="/TestCoreBiz">Categoria 04</Link></li>
                     </ul>
                 </nav>
                 <div className="user-part size-3  size-mob-10">

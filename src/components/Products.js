@@ -82,7 +82,7 @@ function Product() {
                 loader ? <div className="loader"> loading...</div> 
                 : 
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/TestCoreBiz">
                         <h1 className="title-main">Produtos em destaque</h1>
                         <div className="carossel">
                             <Slider {...settings}>

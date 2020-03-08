@@ -21,6 +21,7 @@
 
 
 # what's needed for run that project:
+    Open the code editor of your choice and change the path's from 'path = "/ TestCoreBiz"' to 'path = "/"'
     Install node_modules: npm install
     For execute: npm start
 
